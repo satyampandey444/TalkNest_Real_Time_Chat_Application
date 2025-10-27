@@ -16,92 +16,85 @@
 
 ## 🚀 Overview
 
-**TalkNest** is a modern **real-time chat platform** that allows users to connect, chat instantly, share media, and manage friendships.
-It offers OTP-based authentication using **Twilio**, JWT-secured login, and lightning-fast communication via **Socket.IO**.
+**TalkNest** is a full-stack **real-time chat platform** that enables users to connect, chat instantly, share media, and manage friendships securely.
+It features **Twilio OTP authentication**, **JWT-based security**, and **Socket.IO-powered messaging** for an instant communication experience.
 
 ---
 
 ## ✨ Features
 
-### ✅ Authentication & User Access
+### ✅ Authentication & Access
 
-* OTP-based authentication via **Twilio**
-* Password login with secure **JWT authorization**
-* Protected routes and sessions
+* OTP-based login via **Twilio**
+* Password-based login with **JWT authorization**
+* Secure session management
 
 ### 💬 Real-Time Messaging
 
 * 1:1 private chat powered by **Socket.IO**
-* Real-time message delivery and typing indicators
-* Online/offline status tracking
+* Live message delivery and online presence
+* Chat only with approved friends
 
-### 👥 Social Interaction
+### 👥 Friend System
 
-* Send, accept, and decline friend requests
-* Only connected (friend) users can chat
+* Send, accept, or decline friend requests
+* Chat only between connected users (friends)
 
 ### 📎 Media Sharing
 
-* Send **images, videos, audio, and documents**
-* Supports **PDF, Excel, Docs, and Photos**
-* File preview before sending
+* Share images, videos, audio, and documents
+* Preview support for **PDF, Excel, Docs, and Photos**
 
 ### 🎨 UI / UX
 
-* Fully responsive **React + Tailwind CSS** interface
-* Modern and intuitive chat layout
-* Real-time UI updates and animations
+* Responsive design built with **React + Tailwind CSS**
+* Smooth, modern chat interface
+* Real-time updates and animations
 
 ---
 
-## 🧱 Architecture
+## 🧱 Architecture Overview
 
-TalkNest follows a **modular client-server architecture** designed for scalability and performance.
+TalkNest follows a **modular client–server architecture** for scalability, maintainability, and real-time performance.
 
-### 🖥️ Frontend (React + Redux Toolkit)
+### 🖥️ Frontend (React + Vite)
 
-* React for dynamic UI and component-based architecture
-* Redux Toolkit for global state management
-* Tailwind CSS for styling
-* Communicates with backend via REST API and WebSockets
+* Built with **React.js**, **Vite**, and **Tailwind CSS**
+* State management via **Redux Toolkit**
+* Real-time updates via **Socket.IO client**
+* API communication through Axios
 
 ### ⚙️ Backend (Node.js + Express)
 
-* REST APIs for authentication, friends, and chat management
-* Twilio integration for OTP-based login
-* JWT middleware for authorization
-* File uploads and user management
-
-### 🔌 Real-Time (Socket.IO)
-
-* Handles real-time messaging events
-* Maintains online/offline user states
-* Pushes message delivery status updates
+* RESTful APIs for authentication, friends, and chat
+* **Twilio integration** for OTP
+* **JWT middleware** for route protection
+* File upload handling
+* **Socket.IO server** for real-time chat events
 
 ### 🗄️ Database (MongoDB + Mongoose)
 
-* Stores users, messages, and friend data
-* Indexed queries for fast retrieval
-* Schema validation via Mongoose models
+* Stores user data, messages, and friend relationships
+* Optimized queries and schema validation
 
 ### ☁️ Deployment
 
 * Hosted on **Render**
-* Environment variables for secrets and configuration
-* CI/CD supported
+* Environment variables secured via `.env`
+* CI/CD support for seamless deployment
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer          | Technologies                          |
-| -------------- | ------------------------------------- |
-| Frontend       | React.js, Redux Toolkit, Tailwind CSS |
-| Backend        | Node.js, Express.js                   |
-| Real-Time      | Socket.IO                             |
-| Database       | MongoDB + Mongoose                    |
-| Authentication | JWT + Twilio OTP                      |
-| Deployment     | Render                                |
+| Layer          | Technologies                                |
+| -------------- | ------------------------------------------- |
+| Frontend       | React.js, Vite, Redux Toolkit, Tailwind CSS |
+| Backend        | Node.js, Express.js                         |
+| Real-Time      | Socket.IO                                   |
+| Database       | MongoDB + Mongoose                          |
+| Authentication | JWT + Twilio OTP                            |
+| Deployment     | Render                                      |
 
 ---
 
@@ -110,63 +103,30 @@ TalkNest follows a **modular client-server architecture** designed for scalabili
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/TalkNest.git
+git clone https://github.com/satyampandey444/TalkNest.git
 cd TalkNest
 ```
 
-### 2️⃣ Install dependencies
+---
 
-#### Backend
 
-```bash
-cd server
-npm install
-```
-
-#### Frontend
-
-```bash
-cd client
-npm install
-```
-
-### 3️⃣ Environment Variables
-
-Create `.env` files in both `server/` and `client/` directories:
-
-#### **Server `.env`**
+#### Create a `.env` file inside the **backend** directory:
 
 ```
-PORT=5000
+# Example .env file for TalkNest
+
+PORT=3000||or any other
 MONGO_URI=<your-mongodb-uri>
-JWT_SECRET=<your-jwt-secret>
-TWILIO_ACCOUNT_SID=<twilio-sid>
-TWILIO_AUTH_TOKEN=<twilio-token>
-TWILIO_PHONE_NUMBER=<twilio-phone-number>
-CLIENT_URL=http://localhost:3000
+JWT_SECRET_KEY=<your-jwt-secret>
+GEMINI_API_KEY=<your-gemini-api-key>
+CLOUDINARY_CLOUD_NAME=<your-cloud-name>
+CLOUDINARY_API_KEY=<your-cloudinary-api-key>
+CLOUDINARY_API_SECRET=<your-cloudinary-api-secret>
+TWILIO_ACCOUNT_SID=<your-twilio-sid>
+TWILIO_AUTH_TOKEN=<your-twilio-auth-token>
+TWILIO_PHONE_NUMBER=<your-twilio-phone>
+
 ```
-
-#### **Client `.env`**
-
-```
-REACT_APP_API_URL=http://localhost:5000/api/v1
-```
-
-### 4️⃣ Run the project
-
-#### Backend
-
-```bash
-npm run dev
-```
-
-#### Frontend
-
-```bash
-npm start
-```
-
-Then open **[http://localhost:3000](http://localhost:3000)** in your browser 🚀
 
 ---
 
@@ -175,20 +135,37 @@ Then open **[http://localhost:3000](http://localhost:3000)** in your browser �
 ```
 TalkNest/
 │
-├── client/                 # React Frontend
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── redux/
-│   │   └── utils/
-│   └── package.json
+├── backend/                         # Node.js Backend
+│   ├── config/                      # Database / Server Config
+│   ├── controllers/                 # API Controllers
+│   ├── middleware/                  # Auth / Error Middleware
+│   ├── models/                      # Mongoose Models
+│   ├── routes/                      # API Routes
+│   ├── socket/                      # Socket.IO Events
+│   ├── index.js                     # Entry Point
+│   ├── .env                         # Environment Variables
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── node_modules/
+│   └── .gitignore
 │
-├── server/                 # Node.js Backend
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── sockets/
-│   └── server.js
+├── frontend/                        # React Frontend (Vite)
+│   ├── public/                      # Static Assets
+│   ├── src/
+│   │   ├── assets/                  # Images / Icons
+│   │   ├── components/              # Reusable Components
+│   │   ├── context/                 # Auth & Socket Contexts
+│   │   ├── hooks/                   # Custom React Hooks
+│   │   ├── redux/                   # Redux Slices & Store
+│   │   ├── App.jsx                  # Root Component
+│   │   ├── index.css                # Global Styles
+│   │   └── main.jsx                 # Entry File
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── node_modules/
 │
 └── README.md
 ```
@@ -197,24 +174,20 @@ TalkNest/
 
 ## 🧑‍💻 Contributing
 
-Contributions are always welcome!
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request 🎉
+Contributions are welcome!
+If you’d like to improve the project:
+Feel free to Contact
 
 ---
 
 ## 📜 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** 
 
 ---
 
 ## 🤝 Connect
 
-Created with ❤️ by [Your Name]
-📧 Email: [your.email@example.com](mailto:your.email@example.com)
-🌍 GitHub: [your-github-profile](https://github.com/your-github-profile)
+Created with ❤️ by Satyam Pandey
+📧 Email: [satyampandey5505@gmail.com](mailto:satyampandey5505@gmail.com)
+🌍 GitHub: [satyampandey444](https://github.com/satyampandey444)
