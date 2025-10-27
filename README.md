@@ -8,7 +8,11 @@
 
 ---
 
-## 🏠 Live Demo
+## **Demo Video**
+[![Talk Nest GIF]()
+
+---
+## 🏠 Live Link
 
 🔗 [TalkNest on Render](https://talknest-real-time-chat-application.onrender.com)
 
