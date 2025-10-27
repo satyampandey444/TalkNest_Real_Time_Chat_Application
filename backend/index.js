@@ -31,12 +31,22 @@ app.use(express.urlencoded({ extended: true, limit: "25mb" }));
 app.use(cookieParser());
 
 // ✅ CORS setup (adjust origin for production later)
+const allowedOrigins = [
+  "http://localhost:5173", // local dev
+  "https://talknest-real-time-chat-application.onrender.com", // deployed frontend
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
+
 
 // ✅ Serve uploaded files (publicly accessible)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
