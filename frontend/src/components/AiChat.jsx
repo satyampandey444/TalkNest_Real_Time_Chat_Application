@@ -24,7 +24,7 @@ const AIFriendChat = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("https://talknest-real-time-chat-application.onrender.com//api/v1/ai/chat", {
+      const res = await axios.post("https://talknest-real-time-chat-application.onrender.com/api/v1/ai/chat", {
         message: input,
       });
 

@@ -9,7 +9,7 @@ const useGetOtherUsers = () => {
   useEffect(() => {
     const fetchOtherUsers = async () => {
       try {
-        const res = await axios.get("https://talknest-real-time-chat-application.onrender.com//api/v1/friends/list", {
+        const res = await axios.get("https://talknest-real-time-chat-application.onrender.com/api/v1/friends/list", {
           withCredentials: true,
         });
 

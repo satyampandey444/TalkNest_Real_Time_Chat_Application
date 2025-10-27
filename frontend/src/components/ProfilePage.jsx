@@ -52,7 +52,7 @@ const ProfilePage = () => {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        "https://talknest-real-time-chat-application.onrender.com//api/v1/user/update-profile",
+        "https://talknest-real-time-chat-application.onrender.com/api/v1/user/update-profile",
         profile,
         { withCredentials: true }
       );

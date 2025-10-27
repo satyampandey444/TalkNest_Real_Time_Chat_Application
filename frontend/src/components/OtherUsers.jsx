@@ -13,7 +13,7 @@ const OtherUsers = () => {
   useEffect(() => {
     const fetchLatestMessages = async () => {
       try {
-        const res = await axios.get("https://talknest-real-time-chat-application.onrender.com//api/v2/message/all", {
+        const res = await axios.get("https://talknest-real-time-chat-application.onrender.com/api/v2/message/all", {
           withCredentials: true,
         });
         if (res.data.success) {

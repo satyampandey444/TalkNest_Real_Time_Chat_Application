@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await axios.get("https://talknest-real-time-chat-application.onrender.com//api/auth/check", {
+        const res = await axios.get("https://talknest-real-time-chat-application.onrender.com/api/auth/check", {
           withCredentials: true,
         });
         setIsAuthenticated(res.data.authenticated);
@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 
   // logout function
   const logout = async () => {
-    await axios.post("https://talknest-real-time-chat-application.onrender.com//api/auth/logout", {}, { withCredentials: true });
+    await axios.post("https://talknest-real-time-chat-application.onrender.com/api/auth/logout", {}, { withCredentials: true });
     setIsAuthenticated(false);
   };
 

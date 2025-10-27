@@ -16,7 +16,7 @@ const FindFriends = () => {
   const fetchFriendRequests = async () => {
     try {
       const { data } = await axios.get(
-        "https://talknest-real-time-chat-application.onrender.com//api/v1/friends/requests",
+        "https://talknest-real-time-chat-application.onrender.com/api/v1/friends/requests",
         { withCredentials: true }
       );
       setFriendRequests(data.received || []);
@@ -31,7 +31,7 @@ const FindFriends = () => {
   const fetchFriendsList = async () => {
     try {
       const { data } = await axios.get(
-        "https://talknest-real-time-chat-application.onrender.com//api/v1/friends/list",
+        "https://talknest-real-time-chat-application.onrender.com/api/v1/friends/list",
         { withCredentials: true }
       );
       setFriends(data.friends || []);
@@ -49,7 +49,7 @@ const FindFriends = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `https://talknest-real-time-chat-application.onrender.com//api/v1/user/search?query=${query}`,
+        `https://talknest-real-time-chat-application.onrender.com/api/v1/user/search?query=${query}`,
         { withCredentials: true }
       );
       setResults(data.users || []);
@@ -64,7 +64,7 @@ const FindFriends = () => {
   const handleSendRequest = async (userId) => {
     try {
       const { data } = await axios.post(
-        `https://talknest-real-time-chat-application.onrender.com//api/v1/friends/send-request/${userId}`,
+        `https://talknest-real-time-chat-application.onrender.com/api/v1/friends/send-request/${userId}`,
         {},
         { withCredentials: true }
       );
@@ -79,7 +79,7 @@ const FindFriends = () => {
   const handleAcceptRequest = async (userId) => {
     try {
       const { data } = await axios.post(
-        `https://talknest-real-time-chat-application.onrender.com//api/v1/friends/accept-request/${userId}`,
+        `https://talknest-real-time-chat-application.onrender.com/api/v1/friends/accept-request/${userId}`,
         {},
         { withCredentials: true }
       );

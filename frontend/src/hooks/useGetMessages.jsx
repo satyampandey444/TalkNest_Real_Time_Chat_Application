@@ -14,7 +14,7 @@ const useGetMessages = () => {
       try {
         axios.defaults.withCredentials = true;
         const res = await axios.get(
-          `https://talknest-real-time-chat-application.onrender.com//api/v2/message/${selectedUser._id}`
+          `https://talknest-real-time-chat-application.onrender.com/api/v2/message/${selectedUser._id}`
         );
         console.log("Fetched Messages:", res.data);
 
