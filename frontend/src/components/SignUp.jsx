@@ -43,7 +43,7 @@ const Signup = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:3000/api/v1/user/register`,
+        `https://talknest-real-time-chat-application.onrender.com//api/v1/user/register`,
         User,
         {
           headers: {

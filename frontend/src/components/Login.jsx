@@ -22,7 +22,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/v1/user/login",
+        "https://talknest-real-time-chat-application.onrender.com//api/v1/user/login",
         User,
         {
           headers: { "Content-Type": "application/json" },

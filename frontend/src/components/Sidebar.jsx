@@ -23,7 +23,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/v2/message/all", {
+        const res = await axios.get("https://talknest-real-time-chat-application.onrender.com//api/v2/message/all", {
           withCredentials: true,
         });
         if (res.data?.messages) {
@@ -41,7 +41,7 @@ const Sidebar = () => {
   const logoutHandler = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/v1/user/logout",
+        "https://talknest-real-time-chat-application.onrender.com//api/v1/user/logout",
         {},
         { withCredentials: true }
       );

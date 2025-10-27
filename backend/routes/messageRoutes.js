@@ -18,7 +18,7 @@ const upload = multer({
 router.get("/all", isAuthenticated, getAllMessages);
 
 
-// POST http://localhost:3000/api/v2/message/send/:id
+// POST https://talknest-real-time-chat-application.onrender.com//api/v2/message/send/:id
 router.post(
   "/send/:id",
   isAuthenticated,
@@ -27,7 +27,7 @@ router.post(
 );
 
 
-// GET http://localhost:3000/api/v2/message/:id
+// GET https://talknest-real-time-chat-application.onrender.com//api/v2/message/:id
 router.get("/:id", isAuthenticated, getMessage);
 
 export default router;

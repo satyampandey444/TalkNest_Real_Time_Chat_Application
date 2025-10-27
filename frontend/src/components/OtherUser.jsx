@@ -16,7 +16,7 @@ const OtherUser = ({ user }) => {
     const fetchLastMessage = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/v2/message/${user._id}`,
+          `https://talknest-real-time-chat-application.onrender.com//api/v2/message/${user._id}`,
           { withCredentials: true }
         );
 

@@ -17,7 +17,7 @@ export const getReceiverSocketId = (receiverId) => {
 // Initialize Socket.IO
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "http://localhost:3000"], // your frontend
+    origin: ["http://localhost:5173", "https://talknest-real-time-chat-application.onrender.com/"], // your frontend
     methods: ["GET", "POST"],
     credentials: true,
   },

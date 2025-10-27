@@ -59,7 +59,7 @@ const SendInput = () => {
       files.forEach((file) => formData.append("media", file));
 
       const res = await axios.post(
-        `http://localhost:3000/api/v2/message/send/${selectedUser._id}`,
+        `https://talknest-real-time-chat-application.onrender.com//api/v2/message/send/${selectedUser._id}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

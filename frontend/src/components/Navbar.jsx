@@ -17,7 +17,7 @@ const Navbar = () => {
     try {
       // 1️⃣ Call backend to clear the JWT cookie
       await axios.post(
-        "http://localhost:3000/api/v1/user/logout",
+        "https://talknest-real-time-chat-application.onrender.com//api/v1/user/logout",
         {},
         { withCredentials: true } // Important for cookies
       );

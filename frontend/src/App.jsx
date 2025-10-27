@@ -37,7 +37,7 @@ function App() {
     if (socket && socket.connected) return;
 
     // Create a new socket connection
-    const newSocket = io("http://localhost:3000", {
+    const newSocket = io("https://talknest-real-time-chat-application.onrender.com/", {
       query: { userId: authUser._id },
       transports: ["websocket"],
       withCredentials: true,
