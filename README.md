@@ -8,9 +8,10 @@
 
 ---
 
-## **Demo Video**
-[![Talk Nest GIF]()
----
+## 🎥 Demo Video
+
+[![Talk Nest]()](https://drive.google.com/file/d/1OgglLVuArBODFZJuY3bBHPRYzwh_j3DQ/view?usp=drive_link)
+
 
 ## Chats & Friends
 
