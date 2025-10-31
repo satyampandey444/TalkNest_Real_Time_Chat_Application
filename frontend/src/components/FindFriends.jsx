@@ -139,7 +139,6 @@ const FindFriends = () => {
           )}
         </div>
 
-        {/* Divider */}
         <div className="my-4 sm:my-6 border-t border-gray-700" />
 
         {/* Sent Requests */}
@@ -183,7 +182,6 @@ const FindFriends = () => {
           )}
         </div>
 
-        {/* Divider */}
         <div className="my-4 sm:my-6 border-t border-gray-700" />
 
         {/* Friends */}
@@ -234,13 +232,13 @@ const FindFriends = () => {
           Find Friends 🔍
         </h2>
 
-        {/* Search Bar */}
+        {/* ✅ Fixed Search Bar */}
         <form
           onSubmit={handleSearch}
-          className="flex flex-col sm:flex-row items-center gap-3 bg-white/10 rounded-full px-3 sm:px-4 py-2 border border-white/20"
+          className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 bg-white/10 rounded-full px-3 sm:px-4 py-2 border border-white/20 w-full"
         >
-          <div className="flex items-center w-full sm:w-auto gap-2">
-            <Search className="text-gray-300" />
+          <div className="flex items-center flex-1 gap-2">
+            <Search className="text-gray-300 w-5 h-5" />
             <input
               type="text"
               placeholder="Search by name..."
@@ -249,10 +247,11 @@ const FindFriends = () => {
               className="bg-transparent text-white w-full outline-none placeholder-gray-400 text-sm sm:text-base"
             />
           </div>
+
           <button
             type="submit"
             disabled={loading}
-            className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 sm:px-5 py-2 rounded-full font-semibold hover:scale-105 transition text-sm sm:text-base"
+            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full font-semibold hover:scale-105 transition text-sm sm:text-base w-full sm:w-auto text-center"
           >
             {loading ? "Searching..." : "Search"}
           </button>

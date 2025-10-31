@@ -61,7 +61,7 @@ const Footer = () => {
       <div className="border-t border-gray-800 text-center py-4 text-sm text-gray-400">
         © {new Date().getFullYear()} TalkNest. All rights reserved.
         <p className="text-gray-400 text-sm">
-          Designed and developed with ❤️ by the Satyam Pandey.
+          Designed and developed with ❤️ by Satyam Pandey.
         </p>
       </div>
 

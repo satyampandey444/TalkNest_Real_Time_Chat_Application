@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { clearAuthUser } from "../../redux/userSlice"; // adjust path if needed
+import { clearAuthUser } from "../../redux/userSlice";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,24 +12,16 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // ✅ Fixed logout handler
   const handleLogout = async () => {
     try {
-      // 1️⃣ Call backend to clear the JWT cookie
       await axios.post(
         "https://talknest-real-time-chat-application.onrender.com/api/v1/user/logout",
         {},
-        { withCredentials: true } // Important for cookies
+        { withCredentials: true }
       );
-
-      // 2️⃣ Clear Redux and localStorage
       dispatch(clearAuthUser());
       localStorage.removeItem("authUser");
-
-      // 3️⃣ Show confirmation
       toast.success("Logged out successfully!");
-
-      // 4️⃣ Redirect to login page
       navigate("/login");
     } catch (error) {
       console.error("Logout Error:", error);
@@ -60,17 +52,17 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 bg-gray-800/70 backdrop-blur-md text-white shadow-md border-b border-gray-700">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
           {/* Logo */}
           <Link
             to="/"
-            className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+            className="text-xl sm:text-2xl font-extrabold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
           >
             TalkNest
           </Link>
 
           {/* Desktop Links */}
-          <ul className="hidden md:flex space-x-8 items-center">
+          <ul className="hidden md:flex space-x-6 lg:space-x-8 items-center">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <NavLink
@@ -85,13 +77,11 @@ const Navbar = () => {
                 </NavLink>
               </li>
             ))}
-
-            {/* Logout Button */}
             {isAuthenticated && (
               <li>
                 <button
                   onClick={handleLogout}
-                  className="ml-2 px-3 py-1 rounded-md bg-red-600 hover:bg-red-500 transition text-sm"
+                  className="ml-2 px-4 py-2 rounded-md bg-red-600 hover:bg-red-500 transition text-sm"
                 >
                   Logout
                 </button>
@@ -99,10 +89,10 @@ const Navbar = () => {
             )}
           </ul>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Toggle Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-200 focus:outline-none"
+            className="md:hidden text-gray-200 focus:outline-none p-2 rounded-md hover:bg-gray-700 active:scale-95 transition"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -110,15 +100,15 @@ const Navbar = () => {
 
         {/* Mobile Dropdown */}
         {isOpen && (
-          <div className="md:hidden bg-gray-900 border-t border-gray-700">
-            <ul className="flex flex-col space-y-2 px-6 py-4">
+          <div className="md:hidden bg-gray-900 border-t border-gray-700 w-full">
+            <ul className="flex flex-col space-y-3 px-5 py-4 max-h-[80vh] overflow-y-auto">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <NavLink
                     to={link.path}
                     onClick={() => setIsOpen(false)}
                     className={({ isActive }) =>
-                      `block py-2 ${
+                      `block py-2 text-base ${
                         isActive
                           ? "text-blue-400 font-semibold"
                           : "text-gray-300 hover:text-blue-400"
@@ -129,8 +119,6 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               ))}
-
-              {/* Logout for mobile */}
               {isAuthenticated && (
                 <li>
                   <button
@@ -138,7 +126,7 @@ const Navbar = () => {
                       setIsOpen(false);
                       handleLogout();
                     }}
-                    className="w-full text-left py-2 text-sm bg-red-600 rounded-md hover:bg-red-500"
+                    className="w-full text-left py-2 text-base bg-red-600 rounded-md hover:bg-red-500 transition"
                   >
                     Logout
                   </button>
@@ -149,8 +137,8 @@ const Navbar = () => {
         )}
       </nav>
 
-      {/* Spacer */}
-      <div className="h-20" />
+      {/* Spacer for fixed nav height */}
+      <div className="h-16 sm:h-20" />
     </>
   );
 };
