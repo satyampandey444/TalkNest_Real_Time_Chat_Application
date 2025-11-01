@@ -192,16 +192,64 @@ TalkNest/
 └── README.md
 ```
 
-## 🎥 Demo Video
+
+# Talk Nest — OTP-based Phone Login (Twilio)
+
+## 🎯 Overview
+
+This repository (Talk Nest — Real-Time Chat Application) supports an **OTP-based login/registration flow by mobile number** implemented using **Twilio**.  
+> **Important:** The live deployed site currently does **not** use Twilio OTP due to Twilio account limitations (trial/subscription). The OTP code and backend endpoints are included in this repo so you can enable OTP locally or after upgrading your Twilio account.
+
+This README explains:
+- how the OTP flow works,
+- how to run it locally using Twilio (trial or full account),
+- a minimal backend example (Node/Express + Twilio Verify),
+- a minimal frontend integration example,
+- deployment notes & troubleshooting.
+
+---
+
+## 🚦 OTP Flow (high-level)
+
+1. User enters a phone number on the client (e.g. `+91xxxxxxxxxx`).
+2. Client calls your backend endpoint `/api/v1/auth/send-otp` with the phone number.
+3. Backend uses Twilio Verify (or Twilio SMS) to send a one-time code to the number.
+4. User enters the code in the app and client calls `/api/v1/auth/verify-otp` with `{ phone, code }`.
+5. Backend verifies the code with Twilio:
+   - If valid: create / fetch user, sign a session or JWT, and return auth info.
+   - If invalid: return an error to the client.
+
+---
+
+## ⚙️ Why OTP is disabled on the deployed site
+
+Twilio trial accounts have strict constraints:
+- limited messaging to verified phone numbers,
+- required account upgrade to remove restrictions and to send SMS to unverified recipients,
+- costs per SMS for production.
+- Implemented forget password feature using twilio sending otp for password reset.
+
+Because the public deployment is on a free/limited Twilio subscription, OTP is **not enabled on the live site** to avoid broken behavior for visitors. Locally (or in production after upgrading Twilio) you can enable it by setting the proper environment variables.
+
+---
+
+## 🎥 Demo Video for Otp Based Login
 
 <p align="center">
   <a href="https://drive.google.com/file/d/17vp_mcGQiajbPGOHNzaVLIpNPBE8OCao/view?usp=drive_link">
-    <img src="./talk_Nest.png" alt="Talk Nest Demo Otp Version" >
+    <img src="./register_with_otp.png" alt="Talk Nest Demo Otp Version" >
   </a>
 </p>
 
 > Click the thumbnail above to watch the demo video of **Talk Nest – Real-Time Chat Application with Registration with Otp on Mobile Nnmber**.
 
+
+## Verification & Otp
+
+<p align="center">
+  <img src="./verification_ss.png" alt="Verification" width="45%" />
+  <img src="./otp_ss.png" alt="Otp" width="45%" />
+</p>
 
 ---
 
