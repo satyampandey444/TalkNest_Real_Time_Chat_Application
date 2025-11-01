@@ -109,16 +109,16 @@ TalkNest follows a **modular client–server architecture** for scalability, mai
 
 ## 🛠️ Tech Stack
 
-| Layer          | Technologies                                |
-| -------------- | ------------------------------------------- |
-| Frontend       | React.js, Vite, Redux Toolkit, Tailwind CSS |
-| Backend        | Node.js, Express.js                         |
-| Real-Time      | Socket.IO                                   |
-| Database       | MongoDB + Mongoose                          |
-| Authentication | JWT + Twilio OTP                            |
-| Deployment     | Render                                      |
+| Layer          | Technologies                                                |
+| -------------- | ----------------------------------------------------------- |
+| Frontend       | React.js, Vite, Redux Toolkit, Tailwind CSS                 |
+| Backend        | Node.js, Express.js                                         |
+| Real-Time      | Socket.IO                                                   |
+| Database       | MongoDB + Mongoose                                          |
+| Authentication | JWT + Twilio OTP                                            |
+| AI Chat        | Google Gemini API                                           |
+| Deployment     | Render (Backend & Database)
 
----
 
 ## ⚡ Setup Instructions
 
