@@ -192,6 +192,17 @@ TalkNest/
 └── README.md
 ```
 
+## 🎥 Demo Video
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/17vp_mcGQiajbPGOHNzaVLIpNPBE8OCao/view?usp=drive_link">
+    <img src="./talk_Nest.png" alt="Talk Nest Demo Otp Version" >
+  </a>
+</p>
+
+> Click the thumbnail above to watch the demo video of **Talk Nest – Real-Time Chat Application with Registration with Otp on Mobile Nnmber**.
+
+
 ---
 
 ## 🧑‍💻 Contributing
