@@ -10,7 +10,7 @@
 
 ## 🎥 Demo Video
 
-[![Talk Nest](./Talk_Nest.png)](https://drive.google.com/file/d/1OgglLVuArBODFZJuY3bBHPRYzwh_j3DQ/view?usp=drive_link)
+[![talk Nest](./Talk_Nest.png)](https://drive.google.com/file/d/1OgglLVuArBODFZJuY3bBHPRYzwh_j3DQ/view?usp=drive_link)
 
 > Click the thumbnail above to watch the demo video of **Talk Nest – Real-Time Chat Application**.
 
