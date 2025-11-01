@@ -12,7 +12,7 @@
 
 <p align="center">
   <a href="https://drive.google.com/file/d/1OgglLVuArBODFZJuY3bBHPRYzwh_j3DQ/view?usp=drive_link">
-    <img src="./talk_Nest.png" alt="Talk Nest Demo" width="500">
+    <img src="./talk_Nest.png" alt="Talk Nest Demo" >
   </a>
 </p>
 
